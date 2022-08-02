@@ -122,7 +122,7 @@
         if(textStatus=='success'){
           $('#pl-table').html('');
           data.forEach(i => {
-            $('#pl-table').append("<tr><td><img src='{{ asset('storage/public/assets') }}/img/audio.jpg' class='avatar avatar-sm ms-3'alt='user1'></td><td class='font-weight-bold fs-6 mb-0'>"+ i['desc'] +"</td><td class='text-xs font-weight-bold mb-0'>"+ i['scholar'] +"</td></tr>");
+            $('#pl-table').append("<tr><td><img src='{{ asset('storage/public/assets') }}/img/audio.jpg' class='avatar avatar-sm ms-3'alt='user1'></td><td class='font-weight-bold fs-6 mb-0'>"+ i['desc'] +"</td><td class='text-xs font-weight-bold mb-0'>"+ i['program'] +"</td></td><td class='text-xs font-weight-bold mb-0'>"+ i['episode'] +"</td></td><td class='text-xs font-weight-bold mb-0'>"+ i['fn'] +"</td></td><td class='text-xs font-weight-bold mb-0'>"+ i['type'] +"</td></td><td class='fs-6 font-weight-bold mb-0'><a class='badge badge-sm bg-gradient-danger' href='#'>حذف</a></td></tr>");
           })
 
         }
@@ -130,8 +130,9 @@
     );
 
   };
-
   getPlaylistData();
+
+
     //-------------------
 
     //add to playlist function
@@ -169,6 +170,7 @@
 
   function addtoRB() {  
   arr = JSON.parse('{!!$playlist!!}');
+
   fileUrl = '{{ asset('storage/public/sw/') }}';
   rbUrl = 'http://127.0.0.1:9001/?pass=DYuYbM2SSm&action=inserttrack&filename=';
   $('#rbdiv').html('');
