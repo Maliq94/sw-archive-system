@@ -38,7 +38,9 @@ class PlaylistController extends Controller
 
     public function viewSinglePlaylist($id)
     {
-        $find_p = $users = DB::table('playlists_content')->where('playlist_id', $id)->get()
+        $playlist_id = $id;
+
+        $find_p = DB::table('playlists_content')->where('playlist_id', $id)->get()
         ->map(function($i){
             $audio_id = $i->audio_id;
             $audio = Audio::find($audio_id);
@@ -47,7 +49,20 @@ class PlaylistController extends Controller
 
         return view('view-playlist-s', [
             'playlist'=> $find_p,
+            'playlist_id' => $playlist_id
         ]);
+    }
+
+    public function viewSinglePlaylist_API($id)
+    {
+        $find_p = $users = DB::table('playlists_content')->where('playlist_id', $id)->get()
+        ->map(function($i){
+            $audio_id = $i->audio_id;
+            $audio = Audio::find($audio_id);
+            return $audio;
+        });
+
+        return $find_p;
     }
 
     public function selectPlaylist($pl, Request $request)
@@ -78,5 +93,11 @@ class PlaylistController extends Controller
             return redirect()->action([MainController::class, 'main_view']);
 
         }
+    }
+
+    public function addAudioToPlaylist_API($audio_id, $pl_id)
+    {
+            DB::insert('insert into playlists_content (audio_id, playlist_id) values (?, ?)', [$audio_id, $pl_id]);
+            return 'ok';
     }
 }

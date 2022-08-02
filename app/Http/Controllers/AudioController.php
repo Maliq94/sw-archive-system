@@ -8,11 +8,11 @@ use App\Models\Scholar;
 use App\Models\Fan;
 use App\Models\Program;
 use App\Models\Type;
+use DB;
 
 class AudioController extends Controller
 {
 
-  
         public function index()
         {
             return view('index');
@@ -56,6 +56,25 @@ class AudioController extends Controller
             // return $audio;
 
 
+        }
+
+        public function getAudioByDesc_API($desc)
+        {
+            $audio = DB::table('audio')->where('desc','like', '%'.$desc.'%')
+            ->get();
+            // ->map(function($i){
+            //     $scho = $i->scholar;
+            //     $fn = $i->fn;
+            //     $type = $i->type;
+            //     $prog = $i->program;
+            //     $i->scholar = Scholar::where('id', $scho)->first();
+            //     $i->fn = Fan::where('id', $fn)->first();
+            //     $i->type = Type::where('id', $type)->first();
+            //     $i->program = Program::where('id', $prog)->first();
+            //     return $i;
+            // });
+         
+            return $audio;
         }
 
         public function add(Request $req)

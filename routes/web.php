@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//--API
+Route::get('/getplaylistitems/{id}', 'App\Http\Controllers\PlaylistController@viewSinglePlaylist_API'); 
+Route::get('/get-audio/{id}', 'App\Http\Controllers\AudioController@getAudioByDesc_API'); 
+Route::get('/addaudiotopl-api/{pid}/{id}', 'App\Http\Controllers\PlaylistController@addAudioToPlaylist_API'); 
+
+//----
 
 Route::get('/view-playlist-s/{id}', 'App\Http\Controllers\PlaylistController@viewSinglePlaylist'); 
 Route::get('/addaudiotopl/{id}', 'App\Http\Controllers\PlaylistController@addAudioToPlaylist'); 
