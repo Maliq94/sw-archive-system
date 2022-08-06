@@ -91,10 +91,11 @@ class AudioController extends Controller
             //file name
             $fileExt = '.'.$req->file('file')->extension();
             $Scholarcode = $this->getScholarCode(request('scholar'));
-            $fn = request('fn');
+            $scholarName = Scholar::find(request('scholar'))->name;
+            $fn = Fan::find(request('fn'))->name;
             $fileName = $Scholarcode.'-'.$fn.'-'.time().$fileExt;
 
-            $req->file('file')->storeAs('public/sw',$fileName);
+            $req->file('file')->storeAs('public/sw/'.$fn.'/'.$scholarName,$fileName);
 
             $audio = new Audio;
             $audio->scholar = request('scholar');
