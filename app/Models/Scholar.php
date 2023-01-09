@@ -13,4 +13,10 @@ class Scholar extends Model
     {
         return $this->hasMany(Audio::class);
     }
+
+    
+    public function programs()
+    {
+        return $this->hasMany(Program::class);
+    }
 }

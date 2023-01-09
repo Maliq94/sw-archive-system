@@ -39,4 +39,11 @@ class ScholarsController extends Controller
             'scholars'=> $scholars,
         ]);
     }
+
+    public function scholarProfile($id){
+        $scholars = Scholar::find($id);
+        return view('profile', [
+            'scholar'=>$scholars
+        ]);
+    }   
 }

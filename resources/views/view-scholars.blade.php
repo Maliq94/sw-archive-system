@@ -16,6 +16,7 @@
                     <tr>
                       <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">اسم الشيخ</th>
                       <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">الرمز</th>
+                      <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">الملف الشخصي</th>
                       <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">حذف</th>
                     </tr>
                   </thead>
@@ -33,7 +34,12 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0 fs-6">{{$p->code}}</p>
+                      <p class="text-xs font-weight-bold mb-0 fs-6">{{$p->code}}</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <a href="/scholar-profile/{{$p->id}}">
+                          <span class="badge badge-sm bg-gradient-success" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">الملف الشخصي</span>
+                        </a>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <a href="/del-scholar/{{$p->id}}">

@@ -39,7 +39,9 @@ Route::get('/view-types', 'App\Http\Controllers\TypesController@view');
 Route::get('/view-fn', 'App\Http\Controllers\FnController@view');
 Route::get('/view-audio', 'App\Http\Controllers\AudioController@view');
 Route::get('/view-playlists', 'App\Http\Controllers\PlaylistController@view');
+Route::get('/scholar-profile/{id}', 'App\Http\Controllers\ScholarsController@scholarProfile');
 Route::get('/', 'App\Http\Controllers\MainController@main_view');
+
 
 Route::get('/del-scholar/{id}', 'App\Http\Controllers\ScholarsController@del');
 Route::get('/del-prog/{id}', 'App\Http\Controllers\ProgramsController@del');
