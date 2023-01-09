@@ -32,12 +32,12 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    
+
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">عدد المشائخ</p>
                     <h5 class="font-weight-bolder mb-0">
                       {{$scholars_count}}
                       <span class="text-success text-sm font-weight-bolder">شيخ</span>
-                     
+
 
                     </h5>
                   </div>
@@ -156,8 +156,8 @@
           <div class="card">
             <div class="card-body p-3">
               <span class="text-danger pe-3 font-weight-bolder">آخر الصوتيات المدرجة | <a class="badge bg-gradient-success" href="">إدارة الصوتيات</a></span>
-             
-             
+
+
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
@@ -176,7 +176,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/audio.jpg" class="avatar avatar-sm ms-3" alt="user1">
+                            <img src="{{ asset('storage/assets') }}/img/audio.jpg" class="avatar avatar-sm ms-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$p->desc}}</h6>
@@ -211,14 +211,14 @@
           </div>
         </div>
         <div class="col-lg-3">
-          
+
           <div class="card h-100 p-3">
             <span class="text-danger pe-3 font-weight-bolder">آخر المشائخ المدرجين | <a class="badge bg-gradient-success" href="">إدارة المشائخ</a></span>
             <ul class="list-group p-0 ">
               @foreach($scholar as $s)
               <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
                 <div class="avatar ms-3">
-                  <img src="{{ asset('storage/public/assets') }}/img/scholar.png" alt="kal" class="border-radius-lg shadow">
+                  <img src="{{ asset('storage/assets') }}/img/scholar.png" alt="kal" class="border-radius-lg shadow">
                 </div>
                 <div class="d-flex align-items-start flex-column justify-content-center">
                   <h6 class="mb-0 text-sm">{{$s->name}}</h6>
@@ -243,7 +243,7 @@
                   <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
                 </svg> {{$p->name}}</a>
                 @endforeach
-               
+
               </div>
             </div>
           </div>
@@ -254,7 +254,7 @@
           <div class="card">
             <div class="card-body p-3">
               <span class="text-danger pe-3 font-weight-bolder">آخر البرامج المدرجة | <a class="badge bg-gradient-success" href="">إدارة البرامج</a></span>
-            
+
 
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
@@ -269,7 +269,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
+                            <img src="{{ asset('storage/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$p->name}}</h6>
@@ -292,7 +292,7 @@
           <div class="card">
             <div class="card-body p-3">
               <span class="text-danger pe-3 font-weight-bolder">آخر الفنون المدرجة | <a class="badge bg-gradient-success" href="">إدارة البرامج</a></span>
-            
+
 
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
@@ -307,7 +307,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
+                            <img src="{{ asset('storage/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$p->name}}</h6>
@@ -326,12 +326,12 @@
           </div>
         </div>
 
-        
+
         <div class="col-lg-4 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-body p-3">
               <span class="text-danger pe-3 font-weight-bolder">آخر الأنواع المدرجة | <a class="badge bg-gradient-success" href="">إدارة البرامج</a></span>
-            
+
 
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
@@ -346,7 +346,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
+                            <img src="{{ asset('storage/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$p->type}}</h6>
@@ -364,7 +364,7 @@
             </div>
           </div>
         </div>
-    
+
 
 
       </div>
@@ -412,7 +412,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/small-logos/logo-xd.svg" class="avatar avatar-sm ms-3">
+                            <img src="{{ asset('storage/assets') }}/img/small-logos/logo-xd.svg" class="avatar avatar-sm ms-3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Soft UI XD الإصدار</h6>
@@ -422,16 +422,16 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-1.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-1.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-2.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-2.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-3.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-3.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-4.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -455,7 +455,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm ms-3">
+                            <img src="{{ asset('storage/assets') }}/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm ms-3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">أضف مسار التقدم إلى التطبيق الداخلي</h6>
@@ -465,10 +465,10 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-2.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-2.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-4.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -492,7 +492,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/small-logos/logo-slack.svg" class="avatar avatar-sm ms-3">
+                            <img src="{{ asset('storage/assets') }}/img/small-logos/logo-slack.svg" class="avatar avatar-sm ms-3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">إصلاح أخطاء النظام الأساسي</h6>
@@ -502,10 +502,10 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-3.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-3.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-1.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-1.jpg">
                           </a>
                         </div>
                       </td>
@@ -529,7 +529,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/small-logos/logo-spotify.svg" class="avatar avatar-sm ms-3">
+                            <img src="{{ asset('storage/assets') }}/img/small-logos/logo-spotify.svg" class="avatar avatar-sm ms-3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">إطلاق تطبيق الهاتف المحمول الخاص بنا</h6>
@@ -539,16 +539,16 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-4.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-4.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-3.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-3.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-4.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-4.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-1.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-1.jpg">
                           </a>
                         </div>
                       </td>
@@ -572,7 +572,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/small-logos/logo-jira.svg" class="avatar avatar-sm ms-3">
+                            <img src="{{ asset('storage/assets') }}/img/small-logos/logo-jira.svg" class="avatar avatar-sm ms-3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">أضف صفحة التسعير الجديدة</h6>
@@ -582,7 +582,7 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-4.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-4.jpg">
                           </a>
                         </div>
                       </td>
@@ -606,7 +606,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/small-logos/logo-invision.svg" class="avatar avatar-sm ms-3">
+                            <img src="{{ asset('storage/assets') }}/img/small-logos/logo-invision.svg" class="avatar avatar-sm ms-3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">إعادة تصميم متجر جديد على الإنترنت</h6>
@@ -616,10 +616,10 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-1.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-1.jpg">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img alt="Image placeholder" src="{{ asset('storage/public/assets') }}/img/team-4.jpg">
+                            <img alt="Image placeholder" src="{{ asset('storage/assets') }}/img/team-4.jpg">
                           </a>
                         </div>
                       </td>

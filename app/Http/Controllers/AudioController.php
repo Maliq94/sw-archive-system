@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AudioTagRequest;
+
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Audio;
 use App\Models\Scholar;
 use App\Models\Fan;
 use App\Models\Program;
 use App\Models\Type;
+use App\Models\AudioTag;
 use DB;
 
 class AudioController extends Controller
@@ -17,6 +21,7 @@ class AudioController extends Controller
         {
             return view('index');
         }
+
         public function addView()
         {
             $all_scholars = Scholar::all();
@@ -32,30 +37,13 @@ class AudioController extends Controller
             ]);
         }
 
-       
-
         public function view()
         {
-            $audio = Audio::all()
-            ->map(function($i){
-                $scho = $i->scholar;
-                $fn = $i->fn;
-                $type = $i->type;
-                $prog = $i->program;
-                $i->scholar = Scholar::where('id', $scho)->first();
-                $i->fn = Fan::where('id', $fn)->first();
-                $i->type = Type::where('id', $type)->first();
-                $i->program = Program::where('id', $prog)->first();
-                return $i;
-            });
+            $audio = Audio::with('scholar')->get();
 
             return view('view-audio', [
                 'audio'=> $audio,
             ]);
-
-            // return $audio;
-
-
         }
 
         public function getAudioByDesc_API($desc)
@@ -73,7 +61,7 @@ class AudioController extends Controller
             //     $i->program = Program::where('id', $prog)->first();
             //     return $i;
             // });
-         
+
             return $audio;
         }
 
@@ -95,16 +83,16 @@ class AudioController extends Controller
             $fn = Fan::find(request('fn'))->name;
             $fileName = $Scholarcode.'-'.$fn.'-'.time().$fileExt;
 
-            $req->file('file')->storeAs('public/sw/'.$fn.'/'.$scholarName,$fileName);
+            $req->file('file')->storeAs('sw/'.$fn.'/'.$scholarName, $fileName, 'public');
 
             $audio = new Audio;
-            $audio->scholar = request('scholar');
-            $audio->fn = request('fn');
-            $audio->type = request('type');
+            $audio->scholar_id = request('scholar');
+            $audio->fn_id = request('fn');
+            $audio->type_id = request('type');
             $audio->desc = request('desc');
-            $audio->program = request('program');
+            $audio->program_id = request('program');
             $audio->episode = request('episode');
-            $audio->file = $fileName;
+            $audio->file = 'sw/'.$fn.'/'.$scholarName.'/'.$fileName;
             $audio->save();
 
             return redirect('/view-audio');
@@ -116,5 +104,33 @@ class AudioController extends Controller
             return $code->code;
         }
 
-       
+        public function addAudioTagView($id)
+        {
+            $audio = Audio::where('id',$id)->with('scholar')->first();
+            $tags = AudioTag::where('audio_id', $id)->get();
+            return view('add-audio-tag',[
+                'tags'=>$tags,
+                'id'=>$id,
+                'audio'=>$audio
+
+            ]);
+
+
+        }
+
+        public function addAudioTag(AudioTagRequest $request)
+        {
+            AudioTag::create($request->validated());
+            return redirect()->route('audiotag',[$request['audio_id']]);
+        }
+
+
+        public function tagDel($audioId,$id)
+         {
+        $audio = AudioTag::find($id);
+        $audio->delete();
+        return redirect()->route('audiotag',[$audioId]);
+         }
+
+
     }

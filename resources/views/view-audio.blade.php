@@ -31,7 +31,7 @@
                   <td>
                     <div class="d-flex px-2 py-1">
                       <div>
-                        <img src="{{ asset('storage/public/assets') }}/img/audio.jpg" class="avatar avatar-sm ms-3"
+                        <img src="{{ asset('storage/assets') }}/img/audio.jpg" class="avatar avatar-sm ms-3"
                           alt="user1">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
@@ -57,13 +57,13 @@
                     <span class="text-secondary text-xs font-weight-bold">{{$p->type->type}}</span>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <a href='/addaudiotopl/{{$p->id}}'>
-                      <span class="badge badge-sm bg-gradient-primary fs-6">إضافة إلى القائمة</span>
+                    <a href='{{ route('audiotag', [$p->id]) }}'>
+                      <span class="badge badge-sm bg-gradient-success fs-6">إضافة دليل</span>
                     </a>
                   </td>
                   <td class="align-middle text-center text-sm">
                     <a href="#">
-                      <span class="badge badge-sm bg-gradient-success" onclick="">سماع</span>
+                      <span class="badge badge-sm bg-gradient-warning" onclick="">سماع</span>
                     </a>
                   </td>
                 </tr>
@@ -84,7 +84,7 @@
     <div class="col-lg-12 mb-lg-0 mb-4">
       <div class="card">
         <div class="card-body p-3">
-          <span class="text-danger pe-3 font-weight-bolder">بيانات إدخال الصوتية | 
+          <span class="text-danger pe-3 font-weight-bolder">بيانات إدخال الصوتية |
             <a class="badge bg-gradient-success fs-6" href="#" onclick="addtoRB()">إدخال صوتية</a>
           </span>
           <div id="rbdiv"></div>
@@ -112,12 +112,12 @@
     var newWindow = window.open(uri);
   }
 
-  function addtoRB() {  
+  function addtoRB() {
   arr = JSON.parse('{!!$audio!!}');
   fileUrl = '{{ asset('storage/public/sw/') }}';
   rbUrl = 'http://127.0.0.1:9001/?pass=DYuYbM2SSm&action=inserttrack&filename=';
   $('#rbdiv').html('');
-  
+
   arr.forEach((item, i) => {
     $.get(rbUrl+fileUrl+'/'+item['file']+'&pos=-2',
       function (data, textStatus, jqXHR) {
@@ -126,9 +126,9 @@
         $('#rbdiv').append('<h6>'+'تم اضافة' + ' (' + item['desc']+')</h6>');
       }
       },
-      
+
     );
-    
+
   });
 };
 

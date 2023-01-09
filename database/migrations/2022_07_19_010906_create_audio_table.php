@@ -16,10 +16,10 @@ class CreateAudioTable extends Migration
         Schema::create('audio', function (Blueprint $table) {
             $table->id();
             $table->string('desc');
-            $table->string('scholar');
-            $table->string('fn');
-            $table->string('type');
-            $table->string('program');
+            $table->foreignId('scholar_id')->constrained('scholars');
+            $table->foreignId('fn_id')->constrained('fn');
+            $table->foreignId('type_id')->constrained('types');
+            $table->foreignId('program_id')->constrained('programs');
             $table->string('file');
             $table->string('episode')->nullable();
             $table->timestamps();

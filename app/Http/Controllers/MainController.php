@@ -13,21 +13,11 @@ use App\Models\Playlist;
 
 class MainController extends Controller
 {
-            
+
     public function main_view(Request $request)
     {
-        $audio = Audio::offset(0)->limit(4)->get()
-        ->map(function($i){
-            $scho = $i->scholar;
-            $fn = $i->fn;
-            $type = $i->type;
-            $prog = $i->program;
-            $i->scholar = Scholar::where('id', $scho)->first();
-            $i->fn = Fan::where('id', $fn)->first();
-            $i->type = Type::where('id', $type)->first();
-            $i->program = Program::where('id', $prog)->first();
-            return $i;
-        });
+        $audio = Audio::with('scholar')->get();
+
         $scholars = Scholar::offset(0)->limit(4)->get();
         $programs = Program::offset(0)->limit(4)->get();
         $types = Type::offset(0)->limit(4)->get();
@@ -75,9 +65,9 @@ class MainController extends Controller
             ]);
         }
 
-       
 
-       
+
+
 
 
 
