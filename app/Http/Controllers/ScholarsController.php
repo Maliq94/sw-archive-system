@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Scholar;
+use App\Models\Audio;
 
 
 class ScholarsController extends Controller
@@ -42,8 +43,11 @@ class ScholarsController extends Controller
 
     public function scholarProfile($id){
         $scholars = Scholar::find($id);
+        $programs = Audio::where('scholar_id',$id)->distinct()->with('program')->get('program_id');
         return view('profile', [
-            'scholar'=>$scholars
+            'scholar'=>$scholars,
+            'programs'=>$programs
         ]);
+
     }   
 }

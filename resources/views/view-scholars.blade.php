@@ -21,7 +21,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($scholars as $p)
+                  @foreach($scholars as $p)
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
@@ -51,8 +51,6 @@
                   </tbody>
                 </table>
               </div>
-
-
 
             </div>
           </div>

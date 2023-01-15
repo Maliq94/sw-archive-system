@@ -160,23 +160,28 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($programs as $p )
+                      
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('storage/public/assets') }}/img/logo-ct-dark.png" class="avatar avatar-sm ms-3" alt="user1">
+                            <img src="{{ asset('storage/assets') }}/img/logo-ct.png" class="avatar avatar-sm ms-3" alt="user1">
                           </div>
+                          {{-- <p class="text-xs font-weight-bold mb-0 fs-7"></p> --}}
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
+                            <h6 class="mb-0 text-sm"> {{$p->program->name}} </h6>
                           </div>
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text">
                         <a href="">
-                          <span class="badge badge-sm bg-gradient-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">حذف</span>
+                          <span class="badge badge-l bg-gradient-danger" title="Popover title" >صوتيات البرنامج</span>
                         </a>
                       </td>
                     </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
           </div>
